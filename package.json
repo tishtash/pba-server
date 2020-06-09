@@ -1,0 +1,19 @@
+{
+  "name": "liveeye-pba-server",
+  "version": "1.0.0",
+  "description": "Live Eye Surveillance L.L.C Push Button Alert Server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test-serialport.js",
+    "build": "node build.js",
+    "deploy": "npm run build && aws s3 sync ./zip/ s3://liveeye-report-assets/softwares && aws cloudfront create-invalidation --distribution-id EE3FMV9BF8G8K --paths '/softwares/*'"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "bestzip": "^2.1.5"
+  }
+}
