@@ -1,0 +1,14 @@
+[Unit]
+Description=Push Button Alert Service
+After=network.target
+
+[Service]
+WorkingDirectory=/home/pi/pba-server
+ExecStart=/usr/local/bin/npm run start
+Restart=on-failure
+RestartSec=60s
+User=pi
+Environment=PORT=8000
+
+[Install]
+WantedBy=multi-user.target
