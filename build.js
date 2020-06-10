@@ -3,14 +3,11 @@ var zip = require("bestzip");
 zip({
   source: [
     "index.js",
-    "logo.png",
     "package-lock.json",
     "package.json",
-    "SETUP.bat",
-    "START.bat",
-    "STOP.bat"
+    "PbaService.service"
   ],
-  destination: "./zip/pba-service.zip"
+  destination: "./zip/pba-server.zip"
 })
   .then(function() {
     console.log("File succesfully zipped");
