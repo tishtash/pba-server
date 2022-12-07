@@ -10,7 +10,7 @@
     "deploy": "npm run build && aws s3 sync ./zip/ s3://liveeye-report-assets/softwares && aws cloudfront create-invalidation --distribution-id EE3FMV9BF8G8K --paths '/softwares/*'"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {
